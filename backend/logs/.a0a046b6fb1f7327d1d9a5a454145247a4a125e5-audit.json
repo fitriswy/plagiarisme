@@ -1,0 +1,35 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "D:\\Ayo Fitri Sri Wahyuni S.Tr.Kom\\TRPL Smester 6\\Capstone Project\\Plagiarisme\\Plagiarisme\\backend\\logs\\.a0a046b6fb1f7327d1d9a5a454145247a4a125e5-audit.json",
+    "files": [
+        {
+            "date": 1751216298914,
+            "name": "D:\\Ayo Fitri Sri Wahyuni S.Tr.Kom\\TRPL Smester 6\\Capstone Project\\Plagiarisme\\Plagiarisme\\backend\\logs\\2025-06-29-error.log",
+            "hash": "f82737dc26753cfda41190f80eaa86abb95ff4e9fd6cd1b7c1a9f123c685feea"
+        },
+        {
+            "date": 1751217273362,
+            "name": "D:\\Ayo Fitri Sri Wahyuni S.Tr.Kom\\TRPL Smester 6\\Capstone Project\\Plagiarisme\\Plagiarisme\\backend\\logs\\2025-06-30-error.log",
+            "hash": "589ab25bffa0b628b611897ead194b60927aadae3aa87951e31ebdbd372fae22"
+        },
+        {
+            "date": 1751331532129,
+            "name": "D:\\Ayo Fitri Sri Wahyuni S.Tr.Kom\\TRPL Smester 6\\Capstone Project\\Plagiarisme\\Plagiarisme\\backend\\logs\\2025-07-01-error.log",
+            "hash": "b06489a7e2af8621910236113e06ecef93601f81f27eca2344b051859e1de5a0"
+        },
+        {
+            "date": 1752333367604,
+            "name": "D:\\Ayo Fitri Sri Wahyuni S.Tr.Kom\\TRPL Smester 6\\Capstone Project\\Plagiarisme\\Plagiarisme\\backend\\logs\\2025-07-12-error.log",
+            "hash": "260596a1246f920ca7c16eeda065d90e485f6333e070fcc4787a2a55eed24b21"
+        },
+        {
+            "date": 1752512500534,
+            "name": "D:\\Ayo Fitri Sri Wahyuni S.Tr.Kom\\TRPL Smester 6\\Capstone Project\\Plagiarisme\\Plagiarisme\\backend\\logs\\2025-07-15-error.log",
+            "hash": "f11089ae5b802336b1e466f1e0d1daef85e7820d8aa7bab527e1ae3799778ce3"
+        }
+    ],
+    "hashType": "sha256"
+}

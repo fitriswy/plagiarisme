@@ -1,0 +1,34 @@
+@startuml
+start
+
+:Ambil teks dari dokumen user;
+
+:Ambil teks referensi dari database;
+
+:Tentukan panjang pola teks yang akan dibandingkan;
+
+:Hitung hash pola dokumen user;
+
+:Geser teks referensi satu per satu;
+
+repeat
+  :Hitung hash teks referensi;
+
+  if (Hash cocok?) then (Ya)
+    :Bandingkan karakter satu per satu;
+    if (Teks cocok?) then (Ya)
+      :Tandai sebagai bagian plagiat;
+    else (Tidak)
+      :Lanjutkan pencocokan;
+    endif
+  else (Tidak)
+    :Geser pola ke posisi berikutnya;
+  endif
+backward :belum selesai:
+
+:Hitung total persentase kesamaan;
+
+:Tampilkan hasil ke pengguna;
+
+end
+@enduml

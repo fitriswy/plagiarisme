@@ -1,0 +1,99 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int       @id @default(autoincrement())
+  name          String
+  email         String    @unique
+  password      String
+  role          Role      @default(MAHASISWA)
+  profileImage  String?
+  isActive      Boolean   @default(true)
+  emailVerified Boolean   @default(false)
+  lastLoginAt   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  
+  documents     Document[]
+  reports       Report[]
+  
+  @@map("users")
+}
+
+model Document {
+  id           Int      @id @default(autoincrement())
+  title        String
+  content      String
+  filename     String
+  originalName String
+  fileSize     Int
+  fileType     String
+  uploadedAt   DateTime @default(now())
+  userId       Int
+  status       DocumentStatus @default(PENDING)
+  
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Relasi untuk hasil plagiarisme
+  plagiarismResults1 PlagiarismResult[] @relation("Doc1")
+  plagiarismResults2 PlagiarismResult[] @relation("Doc2")
+  
+  @@map("documents")
+}
+
+model PlagiarismResult {
+  id            Int      @id @default(autoincrement())
+  doc1Id        Int
+  doc2Id        Int
+  similarity    Float
+  matchedText   String?
+  algorithm     Algorithm @default(RABIN_KARP)
+  checkedAt     DateTime @default(now())
+  
+  doc1 Document @relation("Doc1", fields: [doc1Id], references: [id], onDelete: Cascade)
+  doc2 Document @relation("Doc2", fields: [doc2Id], references: [id], onDelete: Cascade)
+  
+  @@unique([doc1Id, doc2Id])
+  @@map("plagiarism_results")
+}
+
+model Report {
+  id          Int      @id @default(autoincrement())
+  userId      Int
+  docId       Int
+  reportType  ReportType
+  description String?
+  createdAt   DateTime @default(now())
+  
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@map("reports")
+}
+
+enum Role {
+  MAHASISWA
+  DOSEN
+  ADMIN
+}
+
+enum DocumentStatus {
+  PENDING
+  PROCESSED
+  ERROR
+}
+
+enum Algorithm {
+  RABIN_KARP
+}
+
+enum ReportType {
+  MONTHLY
+  WEEKLY
+  CUSTOM
+}

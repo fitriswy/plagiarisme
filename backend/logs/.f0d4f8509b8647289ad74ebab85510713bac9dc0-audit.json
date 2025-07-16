@@ -1,0 +1,30 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/abdullatif/Downloads/Plagiarisme/backend/logs/.f0d4f8509b8647289ad74ebab85510713bac9dc0-audit.json",
+    "files": [
+        {
+            "date": 1750244777591,
+            "name": "/Users/abdullatif/Downloads/Plagiarisme/backend/logs/2025-06-18-app.log",
+            "hash": "aad641b05096990bd5b5b1253c1e33298e3f384850d423d52c1c8dae98c1fc68"
+        },
+        {
+            "date": 1750737224141,
+            "name": "/Users/abdullatif/Downloads/Plagiarisme/backend/logs/2025-06-24-app.log",
+            "hash": "e8992beb5fb8ea12a8350291c9cc9a6377d0326d464e06cd040ded7953f912bb"
+        },
+        {
+            "date": 1750862785375,
+            "name": "/Users/abdullatif/Downloads/Plagiarisme/backend/logs/2025-06-25-app.log",
+            "hash": "5616d1ac311f04b235eedae0ad2a2d888ecde79f48cd7ba9851ed7ecbdbef442"
+        },
+        {
+            "date": 1751030148049,
+            "name": "/Users/abdullatif/Downloads/Plagiarisme/backend/logs/2025-06-27-app.log",
+            "hash": "2743c5a84ec6e22403550d62a022286a7cd5ef2a6cb528b9d51ef97f8a0da318"
+        }
+    ],
+    "hashType": "sha256"
+}

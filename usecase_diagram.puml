@@ -1,0 +1,77 @@
+@startuml
+left to right direction
+
+skinparam packageStyle rectangle
+skinparam monochrome true
+skinparam usecase {
+  BorderThickness 1.2
+  RoundCorner 20
+}
+skinparam rectangle {
+  BorderThickness 2
+  RoundCorner 15
+}
+skinparam actorStyle awesome
+
+rectangle "Sistem Deteksi Plagiarisme" {
+
+  ' Use Cases
+  usecase UC_Login as "Login"
+  usecase UC_Register as "Register"
+
+  ' Mahasiswa Use Cases
+  usecase UC_Upload as "Unggah Dokumen"
+  usecase UC_Check as "Cek Plagiarisme"
+  usecase UC_ViewResults as "Lihat Hasil Deteksi"
+  usecase UC_Download as "Unduh Laporan"
+  usecase UC_MyDocs as "Lihat Dokumen Saya"
+
+  ' Dosen Use Cases
+  usecase UC_Analytics as "Dashboard Dosen"
+  usecase UC_StudentHistory as "Riwayat Dokumen Mahasiswa"
+  usecase UC_SystemStats as "Statistik Sistem"
+
+  ' Shared Use Cases
+  usecase UC_Profile as "Kelola Profil"
+  usecase UC_Notification as "Pengaturan Notifikasi"
+  usecase UC_Privacy as "Privasi & Keamanan"
+
+  ' Include relationships
+  UC_Upload --> UC_Login : <<include>>
+  UC_Check --> UC_Login : <<include>>
+  UC_ViewResults --> UC_Login : <<include>>
+  UC_Download --> UC_Login : <<include>>
+  UC_MyDocs --> UC_Login : <<include>>
+  UC_Analytics --> UC_Login : <<include>>
+  UC_StudentHistory --> UC_Login : <<include>>
+  UC_SystemStats --> UC_Login : <<include>>
+  UC_Profile --> UC_Login : <<include>>
+  UC_Notification --> UC_Login : <<include>>
+  UC_Privacy --> UC_Login : <<include>>
+}
+
+' Aktor
+actor "Mahasiswa" as Student
+actor "Dosen" as Lecturer
+
+' Mahasiswa → Use Cases
+Student --> UC_Register
+Student --> UC_Upload
+Student --> UC_Check
+Student --> UC_ViewResults
+Student --> UC_Download
+Student --> UC_MyDocs
+Student --> UC_Profile
+Student --> UC_Notification
+Student --> UC_Privacy
+
+' Dosen → Use Cases
+Lecturer --> UC_Register
+Lecturer --> UC_Analytics
+Lecturer --> UC_StudentHistory
+Lecturer --> UC_SystemStats
+Lecturer --> UC_Profile
+Lecturer --> UC_Notification
+Lecturer --> UC_Privacy
+
+@enduml

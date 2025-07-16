@@ -1,0 +1,4 @@
+{"level":"info","message":"🚀 Server ready at http://localhost:3001","timestamp":"2025-06-25 21:46:25"}
+{"level":"info","message":"📚 API Documentation: http://localhost:3001/api-docs","timestamp":"2025-06-25 21:46:25"}
+{"level":"info","message":"🏥 Health Check: http://localhost:3001/health","timestamp":"2025-06-25 21:46:25"}
+{"level":"info","message":"SIGINT received, shutting down gracefully...","timestamp":"2025-06-25 21:49:22"}

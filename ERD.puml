@@ -1,0 +1,79 @@
+@startuml
+' Mode ERD (Entity Relationship Diagram)
+!define table(x) class x << (T,#FFAAAA) >>
+!define primaryKey(x) <u>x</u>
+!define foreignKey(x) <i>x</i>
+
+hide methods
+hide stereotypes
+skinparam classAttributeIconSize 0
+skinparam backgroundColor #FFFFFF
+
+title 🌐 Entity Relationship Diagram - PlagDetect
+
+' ====================
+' TABEL-TABEL UTAMA
+
+table(User) {
+  primaryKey(id): UUID
+  name: string
+  email: string
+  password: string
+  role: enum(MAHASISWA, DOSEN)
+  created_at: datetime
+  updated_at: datetime
+}
+
+table(Document) {
+  primaryKey(id): UUID
+  foreignKey(user_id): UUID
+  title: string
+  filename: string
+  filetype: string
+  status: enum(PENDING, PROCESSING, COMPLETED)
+  uploaded_at: datetime
+}
+
+table(PlagiarismCheck) {
+  primaryKey(id): UUID
+  foreignKey(document_id): UUID
+  checked_at: datetime
+  similarity_score: float
+  result_file_url: string
+}
+
+table(PlagiarismMatch) {
+  primaryKey(id): UUID
+  foreignKey(check_id): UUID
+  matched_source: string
+  match_percentage: float
+  matched_text: text
+}
+
+table(ActivityLog) {
+  primaryKey(id): UUID
+  foreignKey(user_id): UUID
+  action: string
+  timestamp: datetime
+  metadata: json
+}
+
+table(UserSettings) {
+  primaryKey(id): UUID
+  foreignKey(user_id): UUID
+  notifications_enabled: boolean
+  dark_mode: boolean
+  language: string
+}
+
+' ====================
+' RELASI ANTAR ENTITAS
+
+User "1" -- "0..*" Document : uploads >
+User "1" -- "0..*" ActivityLog : logs >
+User "1" -- "1" UserSettings : configures >
+
+Document "1" -- "0..1" PlagiarismCheck : has >
+PlagiarismCheck "1" -- "0..*" PlagiarismMatch : finds >
+
+@enduml

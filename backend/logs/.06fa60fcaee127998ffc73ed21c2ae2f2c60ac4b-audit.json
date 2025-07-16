@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\Ayo Fitri Sri Wahyuni S.Tr.Kom\\TRPL Smester 6\\Capstone Project\\Plagiarisme\\Plagiarisme\\backend\\logs\\.06fa60fcaee127998ffc73ed21c2ae2f2c60ac4b-audit.json",
+    "files": [
+        {
+            "date": 1751331532124,
+            "name": "D:\\Ayo Fitri Sri Wahyuni S.Tr.Kom\\TRPL Smester 6\\Capstone Project\\Plagiarisme\\Plagiarisme\\backend\\logs\\2025-07-01-app.log",
+            "hash": "3e3bbaba3e398edaecb3ef1ad73192bc24f410ce3692f2b22108adae0bbfb231"
+        },
+        {
+            "date": 1752333367599,
+            "name": "D:\\Ayo Fitri Sri Wahyuni S.Tr.Kom\\TRPL Smester 6\\Capstone Project\\Plagiarisme\\Plagiarisme\\backend\\logs\\2025-07-12-app.log",
+            "hash": "f357d8a37e7f73016c008323be31a38c8afff528e1e48d6ff3a13c924288d19a"
+        },
+        {
+            "date": 1752512500529,
+            "name": "D:\\Ayo Fitri Sri Wahyuni S.Tr.Kom\\TRPL Smester 6\\Capstone Project\\Plagiarisme\\Plagiarisme\\backend\\logs\\2025-07-15-app.log",
+            "hash": "1acce4b972f5f50e4657b3c192ada75ce857bc3d253ef6bfca4df28844653d17"
+        }
+    ],
+    "hashType": "sha256"
+}

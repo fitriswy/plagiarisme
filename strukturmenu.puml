@@ -1,0 +1,42 @@
+@startuml strukturmenu
+
+skinparam defaultTextAlignment center
+skinparam rectangle {
+  RoundCorner 15
+  BackgroundColor #FFFFFF
+  BorderColor black
+}
+skinparam linetype ortho
+
+title Struktur Menu Sistem Deteksi Plagiarisme
+
+rectangle "Register / Login" as Login
+
+rectangle "Dashboard" as Dashboard {
+  rectangle "Dokumen Saya" {
+    rectangle "Lihat Dokumen"
+    rectangle "Unggah Dokumen"
+    rectangle "Edit / Hapus Dokumen"
+    rectangle "Status Pengecekan"
+  }
+
+  rectangle "Cek Plagiarisme" {
+    rectangle "Detail"
+  }
+
+  rectangle "Logout"
+}
+
+Login --> Dashboard
+Dashboard --> "Dokumen Saya"
+Dashboard --> "Cek Plagiarisme"
+Dashboard --> "Logout"
+
+"Dokumen Saya" --> "Lihat Dokumen"
+"Dokumen Saya" --> "Unggah Dokumen"
+"Dokumen Saya" --> "Edit / Hapus Dokumen"
+"Dokumen Saya" --> "Status Pengecekan"
+
+"Cek Plagiarisme" --> "Detail"
+
+@enduml
